@@ -28,7 +28,7 @@ end
 
 dir = File.dirname(__FILE__)
 Dir[dir+"/require/*.rb"].each {|file| require file }
-Dir["../app/models/*.rb"].each {|file| require file }
+Dir["/models/*.rb"].each {|file| require file }
 
 
 =begin
@@ -44,7 +44,7 @@ Digests a Wikipedia pages articles XML dump using a SAX parser. Each article is 
 RubyProf.start
 
 # Connect to the database
-dbconfig = YAML::load(File.open('../config/database.yml')) # load database config
+dbconfig = YAML::load(File.open('config/database.yml')) # load database config
 ActiveRecord::Base.establish_connection(dbconfig['development']) # connect to (development) db
 
 # parse an XML

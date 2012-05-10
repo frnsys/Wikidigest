@@ -16,7 +16,7 @@ Iterates through every entry of the imported pagelinks database and creates corr
 =end
 
 # Connect to the database
-dbconfig = YAML::load(File.open('../config/database.yml')) # load database config
+dbconfig = YAML::load(File.open('config/database.yml')) # load database config
 ActiveRecord::Base.establish_connection(dbconfig['development']) # connect to (development) db
 
 Pagelink.find(:all, :limit => 5).reverse.each do |pagelink|
